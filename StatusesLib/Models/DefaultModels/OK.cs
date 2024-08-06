@@ -1,6 +1,10 @@
 ﻿namespace StatusesLib.Models.StaticModels
 {
-    internal class OK<T> : Status<T>
+    /// <summary>
+    ///  OK
+    /// </summary>
+    /// <typeparam name="T">тип значения</typeparam>
+    public class OK<T> : Status<T>
     {
         public override string Name => "OK";
 
