@@ -1,21 +1,25 @@
-﻿namespace StatusesLib.Models
+﻿using System;
+
+namespace StatusesLib.Models
 {
     public class Status<T>
     {
-        public virtual int Id { get; set; }
+        public virtual Guid Id { get; } = Guid.NewGuid();
 
-        public string Name { get; set; }
+        public virtual string Name { get; set; }
 
-        public string Description { get; set; }
+        public string Message { get; set; }
 
         public T Value { get; set; }
 
+        public virtual TypeStatus Type { get; set; }
+
         public Status() { }
 
-        public Status(int id, string name) => (Id, Name) = (id, name);
+        public Status(string name) => Name = name;
 
-        public Status(int id, string name, T value) : this(id, name) => Value = value;
+        public Status(string name, T value) : this(name) => Value = value;
 
-        public Status(int id, string name, T value, string description) : this(id, name, value) => Description = description;
+        public Status(string name, T value, string message) : this(name, value) => Message = message;
     }
 }
