@@ -4,9 +4,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>StatusLib</Title>
-    <AssemblyVersion>1.0.1.11</AssemblyVersion>
+    <AssemblyVersion>1.0.1.15</AssemblyVersion>
     <FileVersion>1.1.2409.252</FileVersion>
-    <Version>1.0.1-beta-01</Version>
+    <Version>1.0.1-beta-03</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -20,5 +20,9 @@
     <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
     <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="8.0.4" />
+  </ItemGroup>
 
 </Project>

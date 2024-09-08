@@ -1,6 +1,7 @@
 ﻿using StatusesLib.Interfeses;
 using System;
 using System.ComponentModel;
+using System.Text.Json;
 
 namespace StatusesLib.Models
 {
@@ -53,11 +54,11 @@ namespace StatusesLib.Models
 
         public Status(string name, T value, string message) : this(name, value) => Message = message;
 
-        public string ToJsonWithDisplayName()
+        public virtual string ToJsonWithDisplayName()
         {
             return JsonSerializer.Serialize(this, new JsonSerializerOptions
             {
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
             });
         }
     }

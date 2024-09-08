@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 
 namespace StatusesLib.Models.DefaultModels
 {
@@ -15,6 +16,7 @@ namespace StatusesLib.Models.DefaultModels
         /// <summary>
         /// Исключение
         /// </summary>
+        [DisplayName("Исключение")]
         public Exception Exception { get; set; }
 
         public Error(string name, Exception ex) : base(name) => Exception = ex;
