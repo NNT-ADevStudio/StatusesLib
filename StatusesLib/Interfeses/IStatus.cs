@@ -12,5 +12,7 @@
         T Value { get; set; }
 
         K Type { get; set; }
+
+        string ToJsonWithDisplayName();
     }
 }

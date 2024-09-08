@@ -16,9 +16,7 @@ namespace StatusesLib.Models
         [DisplayName("Индификатор")]
         public virtual Guid Id { get; } = Guid.NewGuid();
 
-
         private string _name;
-
         /// <summary>
         /// Название
         /// </summary>
@@ -54,5 +52,13 @@ namespace StatusesLib.Models
         public Status(string name, T value) : this(name) => Value = value;
 
         public Status(string name, T value, string message) : this(name, value) => Message = message;
+
+        public string ToJsonWithDisplayName()
+        {
+            return JsonSerializer.Serialize(this, new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            });
+        }
     }
 }

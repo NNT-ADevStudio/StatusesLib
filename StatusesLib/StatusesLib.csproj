@@ -4,8 +4,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>StatusLib</Title>
-    <AssemblyVersion>1.0.1.10</AssemblyVersion>
-    <FileVersion>1.1.2402.51</FileVersion>
+    <AssemblyVersion>1.0.1.11</AssemblyVersion>
+    <FileVersion>1.1.2409.252</FileVersion>
     <Version>1.0.1-beta-01</Version>
   </PropertyGroup>
 
