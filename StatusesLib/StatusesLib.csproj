@@ -4,9 +4,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>StatusLib</Title>
-    <AssemblyVersion>1.0.1.17</AssemblyVersion>
+    <AssemblyVersion>1.0.1.18</AssemblyVersion>
     <FileVersion>1.1.2409.252</FileVersion>
-    <Version>1.0.1-beta-05</Version>
+    <Version>1.0.1-beta-06</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

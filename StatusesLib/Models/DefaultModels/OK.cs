@@ -1,4 +1,4 @@
-﻿namespace StatusesLib.Models.StaticModels
+﻿namespace StatusesLib.Models.DefaultModels
 {
     /// <summary>
     ///  OK
