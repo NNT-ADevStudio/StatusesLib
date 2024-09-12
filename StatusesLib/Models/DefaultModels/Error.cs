@@ -9,8 +9,6 @@ namespace StatusesLib.Models.DefaultModels
     /// <typeparam name="T">Тип значения</typeparam>
     public class Error<T> : Status<T>
     {
-        public override string Name => "Error";
-
         public override TypeStatus Type => TypeStatus.Error;
 
         /// <summary>
@@ -19,10 +17,10 @@ namespace StatusesLib.Models.DefaultModels
         [DisplayName("Исключение")]
         public Exception Exception { get; set; }
 
-        public Error(string name, Exception ex) : base(name) => Exception = ex;
+        public Error(Exception ex) : base("Error") => Exception = ex;
 
-        public Error(string name, T value, Exception ex) : base(name, value) => Exception = ex;
+        public Error(T value, Exception ex) : base("Error", value) => Exception = ex;
 
-        public Error(string name, T value, string message, Exception ex) : base(name, value, message) => Exception = ex;
+        public Error(T value, string message, Exception ex) : base("Error", value, message) => Exception = ex;
     }
 }

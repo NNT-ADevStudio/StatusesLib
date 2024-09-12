@@ -1,6 +1,8 @@
 ﻿using StatusesLib.Interfeses;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Reflection;
 using System.Text.Json;
 
 namespace StatusesLib.Models
@@ -56,9 +58,22 @@ namespace StatusesLib.Models
 
         public virtual string ToJsonWithDisplayName()
         {
-            return JsonSerializer.Serialize(this, new JsonSerializerOptions
+            var result = new Dictionary<string, object>();
+            var properties = this.GetType().GetProperties();
+
+            foreach (var property in properties)
             {
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                var value = property.GetValue(this);
+
+                var displayNameAttr = property.GetCustomAttribute<DisplayNameAttribute>();
+                var propertyName = displayNameAttr != null ? displayNameAttr.DisplayName : property.Name;
+
+                result.Add(propertyName, value);
+            }
+
+            return JsonSerializer.Serialize(result, new JsonSerializerOptions
+            {
+                WriteIndented = true
             });
         }
     }

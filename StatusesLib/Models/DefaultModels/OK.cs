@@ -6,14 +6,12 @@
     /// <typeparam name="T">тип значения</typeparam>
     public class OK<T> : Status<T>
     {
-        public override string Name => "OK";
-
         public override TypeStatus Type => TypeStatus.OK;
 
-        public OK(string name) : base(name) { }
+        public OK() : base("OK") { }
 
-        public OK(string name, T value) : base(name, value) { }
+        public OK(T value) : base("OK", value) { }
 
-        public OK(string name, T value, string message) : base(name, value, message) { }
+        public OK(T value, string message) : base("OK", value, message) { }
     }
 }
